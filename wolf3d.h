@@ -12,6 +12,7 @@
 # define WOLF3D_H
 # include "libft.h"
 # include "sdl.h"
+# include <time.h>
 
 /*
 ** DEFINES
@@ -39,6 +40,12 @@ struct 						s_sdl
 	SDL_Renderer			*renderer;
 	SDL_Event				*event;
 };
+
+/*
+** DRAW FUNCTIONS
+*/
+//TODO DON'T KEEP IT THAT WAY !
+void 						draw_vertical(SDL_Renderer *renderer, int x, int draw_start, int draw_end);
 
 /*
 ** LEVEL PROTOTYPE
