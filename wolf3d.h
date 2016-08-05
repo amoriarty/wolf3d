@@ -11,5 +11,9 @@
 #ifndef WOLF3D_H
 # define WOLF3D_H
 # include "libft.h"
+# include "sdl.h"
+
+# define WIN_SIZE_X (800)
+# define WIN_SIZE_Y (600)
 
 #endif
