@@ -6,7 +6,7 @@ SET(CMAKE_C_COMPILER "/usr/bin/clang")
 SET(CMAKE_C_FLAGS "-Wall -Wextra -Werror")
 
 #EXECUTABLE FILES
-SET(EXEC_FILE sources/main.c)
+SET(EXEC_FILE sources/main.c sources/level/level.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})

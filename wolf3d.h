@@ -25,6 +25,13 @@
 ** DATA STRUCT
 */
 
+typedef enum e_map			t_map;
+enum 						e_map
+{
+	NOTHING = 0,
+	WALL = 1
+};
+
 typedef struct s_sdl		t_sdl;
 struct 						s_sdl
 {
@@ -32,5 +39,11 @@ struct 						s_sdl
 	SDL_Renderer			*renderer;
 	SDL_Event				*event;
 };
+
+/*
+** LEVEL PROTOTYPE
+*/
+
+int 						map_value(int x, int y);
 
 #endif
