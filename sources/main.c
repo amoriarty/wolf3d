@@ -10,6 +10,7 @@
 
 #include "wolf3d.h"
 
+//TEMPORARY LOOP
 static int 				game_loop(t_sdl *sdl)
 {
 	t_bool				on;
@@ -21,8 +22,14 @@ static int 				game_loop(t_sdl *sdl)
 		if (sdl->event->type == SDL_QUIT)
 			on = FALSE;
 	}
-	return (SUCCESS);
+	return (FAILURE);
 }
+
+/*
+** SETTING SDL STRUCTURE
+** (OPEN WINDOW, SETTING TITLE, SETTING RENDERER,
+** ALLOCATE SDL_EVENTS AND FINALY GIVE THE STRUCTURE TO GAME FUNCTION)
+*/
 
 int						main(void)
 {
@@ -34,7 +41,7 @@ int						main(void)
 				WIN_SIZE_X, WIN_SIZE_Y, 0, &sdl.window, &sdl.renderer);
 		if (sdl.window)
 		{
-			SDL_SetWindowTitle(sdl.window, "SDL TEST");
+			SDL_SetWindowTitle(sdl.window, WIN_TITLE);
 			if ((sdl.event = (SDL_Event *)malloc(sizeof(SDL_Event))))
 				game_loop(&sdl);
 			free(sdl.event);

@@ -13,8 +13,17 @@
 # include "libft.h"
 # include "sdl.h"
 
+/*
+** DEFINES
+*/
+
 # define WIN_SIZE_X (800)
 # define WIN_SIZE_Y (600)
+# define WIN_TITLE ("Wolf3D")
+
+/*
+** DATA STRUCT
+*/
 
 typedef struct s_sdl		t_sdl;
 struct 						s_sdl
