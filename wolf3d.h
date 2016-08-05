@@ -16,4 +16,12 @@
 # define WIN_SIZE_X (800)
 # define WIN_SIZE_Y (600)
 
+typedef struct s_sdl		t_sdl;
+struct 						s_sdl
+{
+	SDL_Window				*window;
+	SDL_Renderer			*renderer;
+	SDL_Event				*event;
+};
+
 #endif
