@@ -89,6 +89,12 @@ void 						draw_wall(t_sdl *sdl, int x, double perp_wall_dist);
 void 						draw_vertical(SDL_Renderer *renderer, int x, int draw_start, int draw_end);
 
 /*
+** EVENT PROTOTYPES
+*/
+
+void 						key_hook(SDL_Keycode sym, t_cam *cam);
+
+/*
 ** INIT PROTOTYPES
 */
 
@@ -106,7 +112,22 @@ int 						map_value(int x, int y);
 ** LOGIC PROTOTYPES
 */
 
+int 						game_loop(t_sdl *sdl);
 int 						dda(t_dda *dda);
 void 						raycasting(t_sdl *sdl, t_cam *cam);
+
+/*
+** LOGIC/MOVE PROTOTYPES
+*/
+
+void 						move_up(t_cam *cam);
+void 						move_down(t_cam *cam);
+
+/*
+** LOGIC/ROTATE PROTOTYPES
+*/
+
+void 						rotate_left(t_cam *cam);
+void 						rotate_right(t_cam *cam);
 
 #endif

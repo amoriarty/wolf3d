@@ -8,7 +8,7 @@ SET(CMAKE_C_FLAGS "-Wall -Wextra -Werror")
 #EXECUTABLE FILES
 SET(EXEC_FILE sources/main.c
 		sources/level/level.c
-		sources/draw/draw_vertical.c sources/draw/draw_background.c sources/init/init_camera.c sources/draw/draw_wall.c sources/logic/dda.c sources/init/init_ray.c sources/init/init_dda.c sources/logic/raycasting.c)
+		sources/draw/draw_vertical.c sources/draw/draw_background.c sources/init/init_camera.c sources/draw/draw_wall.c sources/logic/dda.c sources/init/init_ray.c sources/init/init_dda.c sources/logic/raycasting.c sources/event/key_hook.c sources/logic/move/move_up.c sources/logic/move/move_down.c sources/logic/rotate/rotate_left.c sources/logic/rotate/rotate_right.c sources/logic/game_loop.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
