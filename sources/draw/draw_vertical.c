@@ -1,6 +1,6 @@
 //
 //           :::      ::::::::
-//         :+:      :+:    :+:     draw_vertical.c
+//         :+:      :+:    :+:     draw_vert.c
 //       +:+ +:+         +:+
 //     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
 //   +#+#+#+#+#+   +#+
@@ -10,13 +10,16 @@
 
 #include "wolf3d.h"
 
-//TODO REAL VERTICAL DRAWING FUNCTION
-void 				draw_vertical(SDL_Renderer *renderer, int x, int draw_start, int draw_end)
+/*
+** TO DRAW A VERTICAL
+*/
+
+void 			draw_vert(SDL_Renderer *r, int x, int y1, int y2)
 {
-	if (draw_start < draw_end)
-		while (draw_start <= draw_end)
-			SDL_RenderDrawPoint(renderer, x, draw_start++);
+	if (y1 < y2)
+		while (y1 <= y2)
+			SDL_RenderDrawPoint(r, x, y1++);
 	else
-		while (draw_start >= draw_end)
-			SDL_RenderDrawPoint(renderer, x, draw_start--);
+		while (y1 >= y2)
+			SDL_RenderDrawPoint(r, x, y1--);
 }

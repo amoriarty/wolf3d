@@ -85,8 +85,7 @@ struct 						s_dda
 
 void						draw_background(t_sdl *sdl);
 void 						draw_wall(t_sdl *sdl, int x, double perp_wall_dist);
-//TODO DON'T KEEP IT THAT WAY !
-void 						draw_vertical(SDL_Renderer *renderer, int x, int draw_start, int draw_end);
+void 						draw_vert(SDL_Renderer *r, int x, int y1, int y2);
 
 /*
 ** EVENT PROTOTYPES

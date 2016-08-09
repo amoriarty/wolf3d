@@ -16,9 +16,9 @@
 ** ALLOCATE SDL_EVENTS AND FINALLY GIVE THE STRUCTURE TO GAME FUNCTION)
 */
 
-int main(void)
+int 				main(void)
 {
-	t_sdl sdl;
+	t_sdl 			sdl;
 
 	if (SDL_Init(SDL_INIT_VIDEO) != ERROR)
 	{
