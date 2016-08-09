@@ -12,6 +12,7 @@
 
 void				init_cam(t_cam *camera)
 {
+	//TODO CONFIGURATION DEFINES FOR START POSITION AND DIRECTION
 	camera->position.x = 22;
 	camera->position.y = 12;
 	camera->direction.x = -1;
