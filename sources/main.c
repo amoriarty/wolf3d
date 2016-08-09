@@ -10,49 +10,25 @@
 
 #include "wolf3d.h"
 
-static void				draw_background(t_sdl *sdl)
-{
-	int 				x;
-	int 				y;
-
-	x = -1;
-	while (++x < WIN_SIZE_X)
-	{
-		y = -1;
-		while (++y < WIN_SIZE_Y)
-			SDL_RenderDrawPoint(sdl->renderer, x, y);
-	}
-}
 
 //TEMPORARY LOOP
 static int 				game_loop(t_sdl *sdl)
 {
-	// ON IS THE BOOLEAN THAT DEFINE LOOPS
-	t_bool				on;
+	t_cam				camera;
 
-	// SET ON AT TRUE
-	on = TRUE; // KEEP THAT
-
-	// THE TROUBLE BEGIN HERE
-	double posX = 22, posY = 12;
-	double dirX = -1, dirY = 0;
-	double planeX = 0, planeY = 0.66;
-	//double time = 0;
-	//double oldTime = 0;
-	// THE TROUBLE FINISH HERE
-
-	while (on) // SO WHILE TRUE ...
+	init_cam(&camera);
+	while (TRUE) // SO WHILE TRUE ...
 	{
-		SDL_SetRenderDrawColor(sdl->renderer, 0, 0, 0, 0); // (SET GREEN COLOR)
 		draw_background(sdl);
-		SDL_SetRenderDrawColor(sdl->renderer, 0, 255, 0, 0); // (SET GREEN COLOR)
+		SDL_SetRenderDrawColor(sdl->renderer, 0, 255, 0, 0);// (SET GREEN COLOR)
+
 		// THE TROUBLE CONTINUE HERE
 		for (int x = 0; x < WIN_SIZE_X; x++)
 		{
 			double cameraX = 2 * x / (double)WIN_SIZE_X - 1;
-			double rayPosX = posX, rayPosY = posY;
-			double rayDirX = dirX + planeX * cameraX;
-			double rayDirY = dirY + planeY * cameraX;
+			double rayPosX = camera.position.x, rayPosY = camera.position.y;
+			double rayDirX = camera.direction.x + camera.plane.x * cameraX;
+			double rayDirY = camera.direction.y + camera.plane.y * cameraX;
 			int mapX = (int)rayPosX, mapY = (int)rayPosY;
 			double sideDistX, sideDistY;
 			double deltaDistX = sqrt(1 + (rayDirY * rayDirY) / (rayDirX * rayDirX));
@@ -117,23 +93,15 @@ static int 				game_loop(t_sdl *sdl)
 			if (drawEnd >= WIN_SIZE_Y)
 				drawEnd = WIN_SIZE_Y - 1;
 
+			//TODO USE YOUR OWN.
 			SDL_RenderDrawLine(sdl->renderer, x, drawStart, x, drawEnd);
 		}
-
-		//timing for input and FPS counter
-		//oldTime = time;
-		//time = clock();
-		//double frameTime = (time - oldTime) / 1000.0; //frameTime is the time this frame has taken, in seconds
-
-		//speed modifiers
-		double moveSpeed = 0.5; //frameTime * 5.0; //the constant value is in squares/second
-		double rotSpeed = 0.2; //frameTime * 3.0; //the constant value is in radians/second
 		//THE TROUBLE FINISH HERE
 
 		// SDL EVENT WAITING HERE
 		SDL_WaitEvent(sdl->event);
 		if (sdl->event->type == SDL_QUIT)
-			on = FALSE;
+			return (SUCCESS);
 
 		// THE TROUBLE BEGIN HERE
 		if (sdl->event->type == SDL_KEYDOWN)
@@ -142,32 +110,32 @@ static int 				game_loop(t_sdl *sdl)
 			switch (sdl->event->key.keysym.sym)
 			{
 				case (SDLK_UP):
-					if (!map_value((int)(posX + dirX * moveSpeed), (int)posY))
-						posX += dirX * moveSpeed;
-					if (!map_value((int)posX, (int)(posY + dirY * moveSpeed)))
-						posY += dirY * moveSpeed;
+					if (!map_value((int)(camera.position.x + camera.direction.x * MOVE_SPEED), (int)camera.position.y))
+						camera.position.x += camera.direction.x * MOVE_SPEED;
+					if (!map_value((int)camera.position.x, (int)(camera.position.y + camera.direction.y * MOVE_SPEED)))
+						camera.position.y += camera.direction.y * MOVE_SPEED;
 					break ;
 				case (SDLK_DOWN):
-					if (!map_value((int)(posX - dirX * moveSpeed), (int)posY))
-						posX -= dirX * moveSpeed;
-					if (!map_value((int)posX, (int)(posY - dirY * moveSpeed)))
-						posY -= dirY * moveSpeed;
+					if (!map_value((int)(camera.position.x - camera.direction.x * MOVE_SPEED), (int)camera.position.y))
+						camera.position.x -= camera.direction.x * MOVE_SPEED;
+					if (!map_value((int)camera.position.x, (int)(camera.position.y - camera.direction.y * MOVE_SPEED)))
+						camera.position.y -= camera.direction.y * MOVE_SPEED;
 					break ;
 				case (SDLK_RIGHT):
-					oldDirX = dirX;
-					dirX = dirX * cos(-rotSpeed) - dirY * sin(-rotSpeed);
-					dirY = oldDirX * sin(-rotSpeed) + dirY * cos(-rotSpeed);
-					oldPlaneX = planeX;
-					planeX = planeX * cos(-rotSpeed) - planeY * sin(-rotSpeed);
-					planeY = oldPlaneX * sin(-rotSpeed) + planeY * cos(-rotSpeed);
+					oldDirX = camera.direction.x;
+					camera.direction.x = camera.direction.x * cos(-ROTATE_SPEED) - camera.direction.y * sin(-ROTATE_SPEED);
+					camera.direction.y = oldDirX * sin(-ROTATE_SPEED) + camera.direction.y * cos(-ROTATE_SPEED);
+					oldPlaneX = camera.plane.x;
+					camera.plane.x = camera.plane.x * cos(-ROTATE_SPEED) - camera.plane.y * sin(-ROTATE_SPEED);
+					camera.plane.y = oldPlaneX * sin(-ROTATE_SPEED) + camera.plane.y * cos(-ROTATE_SPEED);
 					break ;
 				case (SDLK_LEFT):
-					oldDirX = dirX;
-					dirX = dirX * cos(rotSpeed) - dirY * sin(rotSpeed);
-					dirY = oldDirX * sin(rotSpeed) + dirY * cos(rotSpeed);
-					oldPlaneX = planeX;
-					planeX = planeX * cos(rotSpeed) - planeY * sin(rotSpeed);
-					planeY = oldPlaneX * sin(rotSpeed) + planeY * cos(rotSpeed);
+					oldDirX = camera.direction.x;
+					camera.direction.x = camera.direction.x * cos(ROTATE_SPEED) - camera.direction.y * sin(ROTATE_SPEED);
+					camera.direction.y = oldDirX * sin(ROTATE_SPEED) + camera.direction.y * cos(ROTATE_SPEED);
+					oldPlaneX = camera.plane.x;
+					camera.plane.x = camera.plane.x * cos(ROTATE_SPEED) - camera.plane.y * sin(ROTATE_SPEED);
+					camera.plane.y = oldPlaneX * sin(ROTATE_SPEED) + camera.plane.y * cos(ROTATE_SPEED);
 					break ;
 			}
 		}

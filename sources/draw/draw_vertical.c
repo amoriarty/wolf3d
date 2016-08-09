@@ -10,6 +10,7 @@
 
 #include "wolf3d.h"
 
+//TODO REAL VERTICAL DRAWING FUNCTION
 void 				draw_vertical(SDL_Renderer *renderer, int x, int draw_start, int draw_end)
 {
 	if (draw_start < draw_end)

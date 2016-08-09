@@ -10,6 +10,7 @@
 
 #include "wolf3d.h"
 
+//TODO REAL FILE PARSING
 int					map_value(int x, int y)
 {
 	/*
