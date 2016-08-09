@@ -10,6 +10,20 @@
 
 #include "wolf3d.h"
 
+static void				draw_background(t_sdl *sdl)
+{
+	int 				x;
+	int 				y;
+
+	x = -1;
+	while (++x < WIN_SIZE_X)
+	{
+		y = -1;
+		while (++y < WIN_SIZE_Y)
+			SDL_RenderDrawPoint(sdl->renderer, x, y);
+	}
+}
+
 //TEMPORARY LOOP
 static int 				game_loop(t_sdl *sdl)
 {
@@ -18,18 +32,20 @@ static int 				game_loop(t_sdl *sdl)
 
 	// SET ON AT TRUE
 	on = TRUE; // KEEP THAT
-	SDL_SetRenderDrawColor(sdl->renderer, 0, 255, 0, 0); // (SET GREEN COLOR)
 
 	// THE TROUBLE BEGIN HERE
 	double posX = 22, posY = 12;
 	double dirX = -1, dirY = 0;
 	double planeX = 0, planeY = 0.66;
-	double time = 0;
-	double oldTime = 0;
+	//double time = 0;
+	//double oldTime = 0;
 	// THE TROUBLE FINISH HERE
 
 	while (on) // SO WHILE TRUE ...
 	{
+		SDL_SetRenderDrawColor(sdl->renderer, 0, 0, 0, 0); // (SET GREEN COLOR)
+		draw_background(sdl);
+		SDL_SetRenderDrawColor(sdl->renderer, 0, 255, 0, 0); // (SET GREEN COLOR)
 		// THE TROUBLE CONTINUE HERE
 		for (int x = 0; x < WIN_SIZE_X; x++)
 		{
@@ -105,13 +121,13 @@ static int 				game_loop(t_sdl *sdl)
 		}
 
 		//timing for input and FPS counter
-		oldTime = time;
-		time = clock();
-		double frameTime = (time - oldTime) / 1000.0; //frameTime is the time this frame has taken, in seconds
+		//oldTime = time;
+		//time = clock();
+		//double frameTime = (time - oldTime) / 1000.0; //frameTime is the time this frame has taken, in seconds
 
 		//speed modifiers
-		double moveSpeed = frameTime * 5.0; //the constant value is in squares/second
-		double rotSpeed = frameTime * 3.0; //the constant value is in radians/second
+		double moveSpeed = 0.5; //frameTime * 5.0; //the constant value is in squares/second
+		double rotSpeed = 0.2; //frameTime * 3.0; //the constant value is in radians/second
 		//THE TROUBLE FINISH HERE
 
 		// SDL EVENT WAITING HERE

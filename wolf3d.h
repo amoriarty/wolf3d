@@ -22,6 +22,8 @@
 # define WIN_SIZE_Y (600)
 # define WIN_TITLE ("Wolf3D")
 
+# define LVL_SIZE 24
+
 /*
 ** DATA STRUCT
 */
