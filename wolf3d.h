@@ -17,18 +17,15 @@
 /*
 ** DEFINES
 */
-//WINDOW
+
 # define WIN_SIZE_X (800)
 # define WIN_SIZE_Y (600)
 # define WIN_TITLE ("Wolf3D")
 
-//LEVEL
 # define LVL_SIZE 24
 
-//COLOR
 # define BACKGROUND_COLOR 0, 0, 0, 0
 
-//CAMERA SETTING
 # define MOVE_SPEED (0.5)
 # define ROTATE_SPEED (0.1)
 
@@ -61,9 +58,25 @@ struct 						s_coor
 typedef struct s_cam		t_cam;
 struct 						s_cam
 {
-	t_coor					position;
-	t_coor					direction;
+	t_coor					pos;
+	t_coor					dir;
 	t_coor					plane;
+};
+
+typedef struct s_ray		t_ray;
+struct 						s_ray
+{
+	t_coor					pos;
+	t_coor					dir;
+};
+
+typedef struct s_dda		t_dda;
+struct 						s_dda
+{
+	t_coor					map;
+	t_coor					side;
+	t_coor					delta;
+	t_coor					step;
 };
 
 /*
@@ -71,6 +84,7 @@ struct 						s_cam
 */
 
 void						draw_background(t_sdl *sdl);
+void 						draw_wall(t_sdl *sdl, int x, double perp_wall_dist);
 //TODO DON'T KEEP IT THAT WAY !
 void 						draw_vertical(SDL_Renderer *renderer, int x, int draw_start, int draw_end);
 
@@ -79,11 +93,20 @@ void 						draw_vertical(SDL_Renderer *renderer, int x, int draw_start, int draw
 */
 
 void						init_cam(t_cam *camera);
+void						init_ray(t_ray *ray, t_cam *cam, int x);
+void 						init_dda(t_dda *dda_n, t_ray *ray);
 
 /*
-** LEVEL PROTOTYPE
+** LEVEL PROTOTYPES
 */
 
 int 						map_value(int x, int y);
+
+/*
+** LOGIC PROTOTYPES
+*/
+
+int 						dda(t_dda *dda);
+void 						raycasting(t_sdl *sdl, t_cam *cam);
 
 #endif

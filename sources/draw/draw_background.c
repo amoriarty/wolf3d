@@ -10,6 +10,10 @@
 
 #include "wolf3d.h"
 
+/*
+** DRAW ALL PIXEL IN COLOR DEFINE IN BACKGROUND_COLOR
+*/
+
 void				draw_background(t_sdl *sdl)
 {
 	int 				x;
