@@ -8,12 +8,25 @@ SET(CMAKE_C_FLAGS "-Wall -Wextra -Werror")
 #EXECUTABLE FILES
 SET(EXEC_FILE sources/main.c
 		sources/level/level.c
-		sources/draw/draw_vertical.c sources/draw/draw_background.c sources/init/init_camera.c sources/draw/draw_wall.c sources/logic/dda.c sources/init/init_ray.c sources/init/init_dda.c sources/logic/raycasting.c sources/event/key_hook.c sources/logic/move/move_up.c sources/logic/move/move_down.c sources/logic/rotate/rotate_left.c sources/logic/rotate/rotate_right.c sources/logic/game_loop.c)
+		sources/draw/draw_vertical.c
+		sources/draw/draw_background.c
+		sources/init/init_camera.c
+		sources/draw/draw_wall.c
+		sources/logic/dda.c
+		sources/init/init_ray.c
+		sources/init/init_dda.c
+		sources/logic/raycasting.c
+		sources/event/key_hook.c
+		sources/logic/move/move_up.c
+		sources/logic/move/move_down.c
+		sources/logic/rotate/rotate_left.c
+		sources/logic/rotate/rotate_right.c
+		sources/logic/game_loop.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(libft)
-INCLUDE_DIRECTORIES(SDL2.framework/Headers)
+INCLUDE_DIRECTORIES(SDL2-2.0.4/include)
 
 #LIBFT MAKEFILE CALL
 ADD_CUSTOM_COMMAND(
@@ -26,10 +39,6 @@ ADD_CUSTOM_TARGET(
 		DEPENDS ${PROJECT_SOURCE_DIR}/libft/libft.a
 )
 
-#MACOS X FRAMEWORK
-#FIND_LIBRARY(SDL2 SDL2)
-#FIND_LIBRARY(APPKIT AppKit)
-
 #EXECUTABLES
 ADD_EXECUTABLE(wolf3d ${EXEC_FILE})
 
@@ -38,4 +47,4 @@ ADD_DEPENDENCIES(wolf3d libft)
 
 #LIBRARIES LINKING
 TARGET_LINK_LIBRARIES(wolf3d ${PROJECT_SOURCE_DIR}/libft/libft.a)
-TARGET_LINK_LIBRARIES(wolf3d ${SDL2})
+TARGET_LINK_LIBRARIES(wolf3d ${PROJECT_SOURCE_DIR}/SDL2-2.0.4/build/build/.libs/libSDL2.dylib)

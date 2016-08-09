@@ -11,7 +11,7 @@
 #ifndef WOLF3D_H
 # define WOLF3D_H
 # include "libft.h"
-# include "sdl.h"
+# include "SDL.h"
 # include <time.h>
 
 /*
