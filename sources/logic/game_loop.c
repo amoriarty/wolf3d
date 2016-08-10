@@ -22,7 +22,6 @@ int 			game_loop(t_sdl *sdl)
 	while (TRUE)
 	{
 		raycasting(sdl, &cam);
-		SDL_RenderPresent(sdl->renderer);
 		SDL_WaitEvent(sdl->event);
 		if (sdl->event->type == SDL_QUIT)
 			return (SUCCESS);

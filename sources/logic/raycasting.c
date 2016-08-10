@@ -32,4 +32,5 @@ void 			raycasting(t_sdl *sdl, t_cam *cam)
 			  : (dda_n.map.y - ray.pos.y + (1 - dda_n.step.y) / 2) / ray.dir.y;
 		draw_wall(sdl, x, pwd);
 	}
+	SDL_RenderPresent(sdl->renderer);
 }

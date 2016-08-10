@@ -33,5 +33,4 @@
 *.su
 
 .idea
-SDL2-2.0.4/build
-SDL2_image-2.0.1/build
+wolf3d

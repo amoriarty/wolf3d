@@ -26,9 +26,11 @@
 # define WIN_SIZE_Y (600)
 # define WIN_TITLE ("Wolf3D")
 
-# define LVL_SIZE 24
+# define LVL_SIZE (24)
 
-# define ROCK_TEXTURE "misc/texture/rock.jpg"
+# define ROCK_TEXTURE ("misc/texture/rock.jpg")
+# define LAVA_TEXTURE ("misc/texture/lava.png")
+# define GREYSTONE_TEXTURE ("misc/texture/greystone.png")
 
 # define BACKGROUND_COLOR 0, 0, 0, 0
 
