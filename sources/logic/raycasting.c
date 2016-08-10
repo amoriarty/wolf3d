@@ -22,6 +22,7 @@ void 			raycasting(t_sdl *sdl, t_cam *cam)
 	double 		pwd;
 
 	x = -1;
+	draw_background(sdl);
 	while (++x < WIN_SIZE_X)
 	{
 		init_ray(&ray, cam, x);

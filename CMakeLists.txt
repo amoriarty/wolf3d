@@ -21,7 +21,7 @@ SET(EXEC_FILE sources/main.c
 		sources/logic/move/move_down.c
 		sources/logic/rotate/rotate_left.c
 		sources/logic/rotate/rotate_right.c
-		sources/logic/game_loop.c)
+		sources/logic/game_loop.c sources/tools/get_pixel.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})

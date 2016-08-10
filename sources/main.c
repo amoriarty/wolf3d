@@ -32,8 +32,8 @@ int 				main(void)
 		if (sdl.window)
 		{
 			SDL_SetWindowTitle(sdl.window, WIN_TITLE);
-			image = IMG_Init(IMG_INIT_PNG);
-			if ((image&IMG_INIT_PNG) == IMG_INIT_PNG)
+			image = IMG_Init(IMG_INIT_JPG);
+			if ((image&IMG_INIT_JPG) == IMG_INIT_JPG)
 			{
 				if ((sdl.event = (SDL_Event *) malloc(sizeof(SDL_Event))))
 					game_loop(&sdl);

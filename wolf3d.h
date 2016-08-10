@@ -28,6 +28,8 @@
 
 # define LVL_SIZE 24
 
+# define ROCK_TEXTURE "misc/texture/rock.jpg"
+
 # define BACKGROUND_COLOR 0, 0, 0, 0
 
 # define MOVE_SPEED (0.5)
@@ -132,5 +134,11 @@ void 						move_down(t_cam *cam);
 
 void 						rotate_left(t_cam *cam);
 void 						rotate_right(t_cam *cam);
+
+/*
+** TOOLS PROTOTYPES
+*/
+
+Uint32						get_pixel(SDL_Surface *surface, int x, int y);
 
 #endif

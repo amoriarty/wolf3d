@@ -21,8 +21,6 @@ int 			game_loop(t_sdl *sdl)
 	init_cam(&cam);
 	while (TRUE)
 	{
-		draw_background(sdl);
-		SDL_SetRenderDrawColor(sdl->renderer, 0, 255, 0, 0);
 		raycasting(sdl, &cam);
 		SDL_RenderPresent(sdl->renderer);
 		SDL_WaitEvent(sdl->event);
