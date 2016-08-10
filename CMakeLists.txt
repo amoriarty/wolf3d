@@ -26,7 +26,8 @@ SET(EXEC_FILE sources/main.c
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(libft)
-INCLUDE_DIRECTORIES(SDL2-2.0.4/include)
+INCLUDE_DIRECTORIES(/Library/Frameworks/SDL2.framework/Headers)
+INCLUDE_DIRECTORIES(/Library/Frameworks/SDL2_image.framework/Headers)
 
 #LIBFT MAKEFILE CALL
 ADD_CUSTOM_COMMAND(
@@ -47,4 +48,5 @@ ADD_DEPENDENCIES(wolf3d libft)
 
 #LIBRARIES LINKING
 TARGET_LINK_LIBRARIES(wolf3d ${PROJECT_SOURCE_DIR}/libft/libft.a)
-TARGET_LINK_LIBRARIES(wolf3d ${PROJECT_SOURCE_DIR}/SDL2-2.0.4/build/build/.libs/libSDL2.dylib)
+TARGET_LINK_LIBRARIES(wolf3d "-F /Library/Frameworks -framework SDL2")
+TARGET_LINK_LIBRARIES(wolf3d "-F /Library/Frameworks -framework SDL2_image")
