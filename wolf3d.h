@@ -13,7 +13,9 @@
 # include "libft.h"
 //TODO MAKEFILE CHANGE
 //# include <SDL2/SDL.h>
+//# include <SDL2_image/SDL_image.h>
 # include "SDL.h"
+# include "SDL_image.h"
 # include <time.h>
 
 /*
