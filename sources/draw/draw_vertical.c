@@ -16,6 +16,10 @@
 
 void 					draw_vert(SDL_Renderer *r, int x, int y0, int y1)
 {
+	(void)r;
+	(void)x;
+	(void)y0;
+	(void)y1;
 	/*
 	SDL_SetRenderDrawColor(r, 255, 255, 255, 0);
 	if (y0 < y1)
@@ -25,35 +29,28 @@ void 					draw_vert(SDL_Renderer *r, int x, int y0, int y1)
 		while (y0 >= y1)
 			SDL_RenderDrawPoint(r, x, y0--);
 	*/
+	/*
 	static SDL_Surface	*texture;
-	int 				height;
-	double 				ratio;
-	double 				v;
-	int 				texV;
-	int 				texU;
 	Uint8 				rgb[4];
 	Uint32 				pixel;
 
 	if (!texture)
 		texture = IMG_Load(GREYSTONE_TEXTURE);
-	if (y0 < y1)
-		height = y1 - y0;
-	else
-		height = y0 - y1;
-	ratio = texture->h - height;
-	v = 0;
 	y0--;
 	while (++y0 < y1)
 	{
-		texV = (int)v & texture->h - 1;
-		texU = x & texture->h - 1;
+		//LOCK SURFACE, GET PIXEL, UNLOCK
 		SDL_LockSurface(texture);
-		pixel = get_pixel(texture, texU, texV);
+		//pixel = get_pixel(texture, texU, texV);
 		SDL_UnlockSurface(texture);
+
+		//CONVERT Uint32 PIXEL IN RGBA VALUE
 		SDL_GetRGBA(pixel, texture->format,
 					&(rgb[0]), &(rgb[1]), &(rgb[2]), &(rgb[3]));
+
+		//DRAW POINT TO THE SCREEN
 		SDL_SetRenderDrawColor(r, rgb[0], rgb[1], rgb[2], rgb[3]);
 		SDL_RenderDrawPoint(r, x, y0);
-		v += ratio;
 	}
+	*/
 }
