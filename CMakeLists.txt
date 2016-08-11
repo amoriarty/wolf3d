@@ -24,7 +24,8 @@ SET(EXEC_FILE sources/main.c
 		sources/logic/game_loop.c
 		sources/level/get_map.c
 		sources/level/read_file.c
-		sources/level/convert_file.c)
+		sources/level/convert_file.c
+		sources/tools/get_pixel.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})

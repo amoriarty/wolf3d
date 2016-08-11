@@ -42,7 +42,7 @@ t_tmp					*read_file(int *lnb)
 
 	*lnb = 0;
 	first = NULL;
-	if ((fd = open("map", O_RDONLY)) != -1)
+	if ((fd = open(MAP_PATH, O_RDONLY)) != -1)
 	{
 		while (get_next_line(fd, &line))
 		{

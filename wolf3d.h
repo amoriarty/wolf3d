@@ -23,7 +23,9 @@
 # define WIN_SIZE_Y (600)
 # define WIN_TITLE ("Wolf3D")
 
-# define MAP_PATH ("map")
+# define MAP_PATH ("misc/map")
+
+# define GREYSTONE_TEXTURE ("misc/texture/greystone.png")
 
 # define BACKGROUND_COLOR 0, 0, 0, 0
 
