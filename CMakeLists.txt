@@ -3,7 +3,7 @@ PROJECT(wolf3d)
 
 #COMPILERS CONFIGURATION
 SET(CMAKE_C_COMPILER "/usr/bin/clang")
-SET(CMAKE_C_FLAGS "-Wall -Wextra -Werror")
+SET(CMAKE_C_FLAGS "-Wall -Wextra -Werror -F /Library/Frameworks")
 
 #EXECUTABLE FILES
 SET(EXEC_FILE sources/main.c
@@ -21,13 +21,14 @@ SET(EXEC_FILE sources/main.c
 		sources/logic/move/move_down.c
 		sources/logic/rotate/rotate_left.c
 		sources/logic/rotate/rotate_right.c
-		sources/logic/game_loop.c)
+		sources/logic/game_loop.c
+		sources/level/get_map.c
+		sources/level/read_file.c
+		sources/level/convert_file.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(libft)
-INCLUDE_DIRECTORIES(/Library/Frameworks/SDL2.framework/Headers)
-INCLUDE_DIRECTORIES(/Library/Frameworks/SDL2_image.framework/Headers)
 
 #LIBFT MAKEFILE CALL
 ADD_CUSTOM_COMMAND(
@@ -48,5 +49,5 @@ ADD_DEPENDENCIES(wolf3d libft)
 
 #LIBRARIES LINKING
 TARGET_LINK_LIBRARIES(wolf3d ${PROJECT_SOURCE_DIR}/libft/libft.a)
-TARGET_LINK_LIBRARIES(wolf3d "-F /Library/Frameworks -framework SDL2")
-TARGET_LINK_LIBRARIES(wolf3d "-F /Library/Frameworks -framework SDL2_image")
+TARGET_LINK_LIBRARIES(wolf3d "-framework SDL2")
+TARGET_LINK_LIBRARIES(wolf3d "-framework SDL2_image")

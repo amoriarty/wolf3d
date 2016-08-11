@@ -11,12 +11,9 @@
 #ifndef WOLF3D_H
 # define WOLF3D_H
 # include "libft.h"
-//TODO MAKEFILE CHANGE
-//# include <SDL2/SDL.h>
-//# include <SDL2_image/SDL_image.h>
-# include "SDL.h"
-# include "SDL_image.h"
-# include <time.h>
+# include <SDL2/SDL.h>
+# include <SDL2_image/SDL_image.h>
+# include <fcntl.h>
 
 /*
 ** DEFINES
@@ -26,7 +23,7 @@
 # define WIN_SIZE_Y (600)
 # define WIN_TITLE ("Wolf3D")
 
-# define LVL_SIZE 24
+# define MAP_PATH ("map")
 
 # define BACKGROUND_COLOR 0, 0, 0, 0
 
@@ -37,11 +34,12 @@
 ** DATA STRUCT
 */
 
-typedef enum e_map			t_map;
-enum 						e_map
+typedef struct s_map		t_map;
+struct 						s_map
 {
-	NOTHING = 0,
-	WALL = 1
+	int 					width;
+	int 					height;
+	int 					**map;
 };
 
 typedef struct s_sdl		t_sdl;
@@ -110,6 +108,7 @@ void 						init_dda(t_dda *dda_n, t_ray *ray);
 */
 
 int 						map_value(int x, int y);
+t_map 						*get_map(void);
 
 /*
 ** LOGIC PROTOTYPES
