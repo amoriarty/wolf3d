@@ -62,13 +62,16 @@ void 			raycasting(t_sdl *sdl, t_cam *cam)
 			tex_x = texture->w - tex_x - 1;
 		if (side && ray.dir.x < 0)
 			tex_x = texture->w - tex_x - 1;
+
 		for (int y = start; y < end; y++)
 		{
 			int 		tex_y;
 			Uint32		color;
 			Uint8 		pxl[4];
 
-			tex_y = (y * 2 - WIN_SIZE_Y + line_height) * 32 / line_height;
+			//d = y * 256 - WIN_SIZE_Y * 128 + line_height * 128;
+			//tex_y = ((d * texture->h) / line_height) / 256;
+			tex_y = (y * 2 - WIN_SIZE_Y + line_height) * (texture->h / 2) / line_height;
 			SDL_LockSurface(texture);
 			color = get_pixel(texture, tex_x, tex_y);
 			SDL_UnlockSurface(texture);
