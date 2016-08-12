@@ -50,6 +50,7 @@ struct 						s_sdl
 	SDL_Window				*window;
 	SDL_Renderer			*renderer;
 	SDL_Event				*event;
+	SDL_Surface				*wall;
 };
 
 typedef struct s_coor		t_coor;
@@ -81,6 +82,7 @@ struct 						s_dda
 	t_coor					side;
 	t_coor					delta;
 	t_coor					step;
+	int 					s;
 };
 
 /*
@@ -88,7 +90,7 @@ struct 						s_dda
 */
 
 void						draw_background(t_sdl *sdl);
-void 						draw_wall(t_sdl *sdl, int x, double perp_wall_dist);
+void 						draw_wall(t_sdl *sdl, int x, t_dda *dda_n, t_ray *ray);
 void 						draw_vert(SDL_Renderer *r, int x, int y1, int y2);
 
 /*

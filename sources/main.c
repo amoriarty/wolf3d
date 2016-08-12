@@ -10,8 +10,9 @@
 
 #include "wolf3d.h"
 
-//TODO DRAW FLOOR AND SKY
 //TODO ADD TEXTURE
+//TODO DRAW FLOOR AND SKY
+//TODO RAYCAST ONLY ON EVENTS.
 
 /*
 ** SETTING SDL STRUCTURE
@@ -32,7 +33,7 @@ int 				main(void)
 			SDL_SetWindowTitle(sdl.window, WIN_TITLE);
 			if ((IMG_Init(IMG_INIT_PNG)&IMG_INIT_PNG) == IMG_INIT_PNG)
 			{
-				if ((sdl.event = (SDL_Event *) malloc(sizeof(SDL_Event))))
+				if ((sdl.event = (SDL_Event *)malloc(sizeof(SDL_Event))))
 					game_loop(&sdl);
 				free(sdl.event);
 				IMG_Quit();
