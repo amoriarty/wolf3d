@@ -37,6 +37,7 @@ void 						draw_vert(SDL_Renderer *r, int x, int y1, int y2);
 
 void 						wait_event(t_all *all);
 void 						key_hook(t_all *all, SDL_Keycode sym);
+void 						window_event(t_all *all);
 
 /*
 ** INIT PROTOTYPES
@@ -46,7 +47,7 @@ t_bool						init_sdl(t_sdl *sdl);
 t_bool						init_window(t_win *win);
 t_bool						init_game(t_game *game);
 t_bool						init_cam(t_cam *camera);
-void						init_ray(t_ray *ray, t_cam *cam, int x);
+void						init_ray(t_all *all);
 void 						init_dda(t_dda *dda_n, t_ray *ray);
 
 /*

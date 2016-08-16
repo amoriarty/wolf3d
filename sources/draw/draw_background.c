@@ -21,10 +21,10 @@ void				draw_background(t_sdl *sdl)
 
 	x = -1;
 	SDL_SetRenderDrawColor(sdl->win.renderer, BACKGROUND_COLOR);
-	while (++x < WIN_SIZE_X)
+	while (++x < sdl->win.width)
 	{
 		y = -1;
-		while (++y < WIN_SIZE_Y)
+		while (++y < sdl->win.height)
 			SDL_RenderDrawPoint(sdl->win.renderer, x, y);
 	}
 }

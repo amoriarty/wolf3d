@@ -14,12 +14,16 @@
 ** INITIALIZE RAYON WITH CAMERA VARIABLES
 */
 
-void			init_ray(t_ray *ray, t_cam *cam, int x)
+void			init_ray(t_all *all)
 {
-	ray->pos.x = cam->pos.x;
-	ray->pos.y = cam->pos.y;
-	ray->dir.x = cam->dir.x +
-				 cam->plane.x * (2 * x / (double) WIN_SIZE_X - 1);
-	ray->dir.y = cam->dir.y +
-				 cam->plane.y * (2 * x / (double) WIN_SIZE_X - 1);
+	all->game.ray.pos.x = all->game.cam.pos.x;
+	all->game.ray.pos.y = all->game.cam.pos.y;
+	all->game.ray.dir.x = all->game.cam.dir.x
+						  + all->game.cam.plane.x
+							* (2 * all->game.iter.x /
+							   (double)all->sdl.win.width - 1);
+	all->game.ray.dir.y = all->game.cam.dir.y
+						  + all->game.cam.plane.y
+							* (2 * all->game.iter.x /
+							   (double)all->sdl.win.height - 1);
 }

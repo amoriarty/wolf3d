@@ -16,7 +16,6 @@
 
 int 			game_loop(t_all *all)
 {
-	init_cam(&(all->game.cam));
 	//TODO PRELOAD TEXTURES
 	all->sdl.wall = IMG_Load(GREYSTONE_TEXTURE);
 	while (all->game.loop)

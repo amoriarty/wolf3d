@@ -19,9 +19,9 @@ void 			raycasting(t_all *all)
 	all->game.iter.x = -1;
 	//TODO NO MORE BACKGROUND TO DRAW
 	draw_background(&(all->sdl));
-	while (++(all->game.iter.x) < WIN_SIZE_X)
+	while (++(all->game.iter.x) < all->sdl.win.width)
 	{
-		init_ray(&(all->game.ray), &(all->game.cam), all->game.iter.x);
+		init_ray(all);
 		init_dda(&(all->game.dda), &(all->game.ray));
 		all->game.dda.s = dda(&(all->game.dda));
 		draw_wall(all);
