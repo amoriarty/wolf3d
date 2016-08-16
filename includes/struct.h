@@ -56,12 +56,20 @@ struct 						s_dda
 	t_coor					delta;
 	t_coor					step;
 	int 					s;
+	int 					line_height;
+	double					pwd;
+	double 					wall_x;
+	int 					start;
+	int 					end;
 };
 
 struct 						s_game
 {
 	t_bool					loop;
 	t_cam					cam;
+	t_ray					ray;
+	t_dda					dda;
+	t_coor					iter;
 };
 
 struct 						s_win

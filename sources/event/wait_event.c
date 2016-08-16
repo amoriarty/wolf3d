@@ -16,9 +16,5 @@ void 							wait_event(t_all *all)
 	if (all->sdl.event->type == SDL_QUIT)
 		all->game.loop = FALSE;
 	if (all->sdl.event->type == SDL_KEYDOWN)
-	{
-		if (all->sdl.event->key.keysym.sym == SDLK_ESCAPE)
-			all->game.loop = FALSE;
-		key_hook(all->sdl.event->key.keysym.sym, &(all->game.cam));
-	}
+		key_hook(all, all->sdl.event->key.keysym.sym);
 }

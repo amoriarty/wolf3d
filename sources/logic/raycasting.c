@@ -14,20 +14,17 @@
 ** MY RAYCASTING ALGORITHM, MINIMIZE TO FUNCTIONS CALLED
 */
 
-void 			raycasting(t_sdl *sdl, t_cam *cam)
+void 			raycasting(t_all *all)
 {
-	int 		x;
-	t_ray		ray;
-	t_dda		dda_n;
-
-	x = -1;
-	draw_background(sdl);
-	while (++x < WIN_SIZE_X)
+	all->game.iter.x = -1;
+	//TODO NO MORE BACKGROUND TO DRAW
+	draw_background(&(all->sdl));
+	while (++(all->game.iter.x) < WIN_SIZE_X)
 	{
-		init_ray(&ray, cam, x);
-		init_dda(&dda_n, &ray);
-		dda_n.s = dda(&dda_n);
-		draw_wall(sdl, x, &dda_n, &ray);
+		init_ray(&(all->game.ray), &(all->game.cam), all->game.iter.x);
+		init_dda(&(all->game.dda), &(all->game.ray));
+		all->game.dda.s = dda(&(all->game.dda));
+		draw_wall(all);
 	}
-	SDL_RenderPresent(sdl->win.renderer);
+	SDL_RenderPresent(all->sdl.win.renderer);
 }

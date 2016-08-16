@@ -28,7 +28,7 @@ void						destroy_sdl(t_sdl *sdl);
 */
 
 void						draw_background(t_sdl *sdl);
-void 						draw_wall(t_sdl *sdl, int x, t_dda *dda_n, t_ray *ray);
+void 						draw_wall(t_all *all);
 void 						draw_vert(SDL_Renderer *r, int x, int y1, int y2);
 
 /*
@@ -36,7 +36,7 @@ void 						draw_vert(SDL_Renderer *r, int x, int y1, int y2);
 */
 
 void 						wait_event(t_all *all);
-void 						key_hook(SDL_Keycode sym, t_cam *cam);
+void 						key_hook(t_all *all, SDL_Keycode sym);
 
 /*
 ** INIT PROTOTYPES
@@ -62,7 +62,7 @@ t_map 						*get_map(void);
 
 int 						game_loop(t_all *all);
 int 						dda(t_dda *dda);
-void 						raycasting(t_sdl *sdl, t_cam *cam);
+void 						raycasting(t_all *all);
 
 /*
 ** LOGIC/MOVE PROTOTYPES
