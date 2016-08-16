@@ -10,7 +10,7 @@ SET(EXEC_FILE sources/main.c
 		sources/level/level.c
 		sources/draw/draw_vertical.c
 		sources/draw/draw_background.c
-		sources/init/init_camera.c
+		sources/init/init_cam.c
 		sources/draw/draw_wall.c
 		sources/logic/dda.c
 		sources/init/init_ray.c
@@ -27,7 +27,7 @@ SET(EXEC_FILE sources/main.c
 		sources/level/convert_file.c
 		sources/tools/get_pixel.c
 		sources/init/init_sdl.c
-		sources/destroy/destroy_sdl.c sources/init/init_window.c)
+		sources/destroy/destroy_sdl.c sources/init/init_window.c sources/event/wait_event.c sources/init/init_game.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(includes)

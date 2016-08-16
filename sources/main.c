@@ -34,13 +34,16 @@
 ** ALLOCATE SDL_EVENTS AND FINALLY GIVE THE STRUCTURE TO GAME FUNCTION)
 */
 
+
+
 int 				main(void)
 {
 	t_all			all;
 
 	if (init_sdl(&(all.sdl)))
 	{
-		game_loop(&(all.sdl));
+		if (init_game(&(all.game)))
+			game_loop(&all);
 		destroy_sdl(&(all.sdl));
 		return (EXIT_SUCCESS);
 	}

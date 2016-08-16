@@ -35,6 +35,7 @@ void 						draw_vert(SDL_Renderer *r, int x, int y1, int y2);
 ** EVENT PROTOTYPES
 */
 
+void 						wait_event(t_all *all);
 void 						key_hook(SDL_Keycode sym, t_cam *cam);
 
 /*
@@ -43,7 +44,8 @@ void 						key_hook(SDL_Keycode sym, t_cam *cam);
 
 t_bool						init_sdl(t_sdl *sdl);
 t_bool						init_window(t_win *win);
-void						init_cam(t_cam *camera);
+t_bool						init_game(t_game *game);
+t_bool						init_cam(t_cam *camera);
 void						init_ray(t_ray *ray, t_cam *cam, int x);
 void 						init_dda(t_dda *dda_n, t_ray *ray);
 
@@ -58,7 +60,7 @@ t_map 						*get_map(void);
 ** LOGIC PROTOTYPES
 */
 
-int 						game_loop(t_sdl *sdl);
+int 						game_loop(t_all *all);
 int 						dda(t_dda *dda);
 void 						raycasting(t_sdl *sdl, t_cam *cam);
 

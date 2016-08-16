@@ -1,6 +1,6 @@
 //
 //           :::      ::::::::
-//         :+:      :+:    :+:     init_camera.c
+//         :+:      :+:    :+:     init_cam.c
 //       +:+ +:+         +:+
 //     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
 //   +#+#+#+#+#+   +#+
@@ -14,7 +14,7 @@
 ** INIT THE INITIAL CONFIGURATION OF THE PLAYER CAMERA
 */
 
-void				init_cam(t_cam *camera)
+t_bool				init_cam(t_cam *camera)
 {
 	//TODO CONFIGURATION DEFINES FOR START pos AND DIRECTION
 	camera->pos.x = 22;
@@ -23,4 +23,5 @@ void				init_cam(t_cam *camera)
 	camera->dir.y = 0;
 	camera->plane.x = 0;
 	camera->plane.y = 0.66;
+	return (SUCCESS);
 }

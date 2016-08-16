@@ -14,42 +14,14 @@
 ** GAME LOOP
 */
 
-void 			load_texture(t_sdl *sdl)
+int 			game_loop(t_all *all)
 {
-	sdl->wall = IMG_Load(GREYSTONE_TEXTURE);
-	sdl->floor = IMG_Load(PURPLESTONE_TEXTURE);
-}
-
-void 			unload_texture(t_sdl *sdl)
-{
-	SDL_FreeSurface(sdl->wall);
-	SDL_FreeSurface(sdl->floor);
-}
-
-int 			game_loop(t_sdl *sdl)
-{
-	t_cam 		cam;
-
-	init_cam(&cam);
-	load_texture(sdl);
-	while (TRUE)
+	init_cam(&(all->game.cam));
+	all->sdl.wall = IMG_Load(GREYSTONE_TEXTURE);
+	while (all->game.loop)
 	{
-		raycasting(sdl, &cam);
-		SDL_WaitEvent(sdl->event);
-		if (sdl->event->type == SDL_QUIT)
-		{
-			unload_texture(sdl);
-			return (SUCCESS);
-		}
-		if (sdl->event->type == SDL_KEYDOWN)
-		{
-			if (sdl->event->key.keysym.sym == SDLK_ESCAPE)
-			{
-				unload_texture(sdl);
-				return (SUCCESS);
-			}
-			key_hook(sdl->event->key.keysym.sym, &cam);
-		}
+		raycasting(&(all->sdl), &(all->game.cam));
+		wait_event(all);
 	}
 	return (FAILURE);
 }

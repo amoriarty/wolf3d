@@ -16,6 +16,7 @@ typedef struct s_coor		t_coor;
 typedef struct s_cam		t_cam;
 typedef struct s_ray		t_ray;
 typedef struct s_dda		t_dda;
+typedef struct s_game		t_game;
 typedef struct s_win		t_win;
 typedef struct s_sdl		t_sdl;
 typedef struct s_all		t_all;
@@ -28,8 +29,6 @@ struct 						s_map
 	int 					height;
 	int 					**map;
 };
-
-
 
 struct 						s_coor
 {
@@ -59,6 +58,12 @@ struct 						s_dda
 	int 					s;
 };
 
+struct 						s_game
+{
+	t_bool					loop;
+	t_cam					cam;
+};
+
 struct 						s_win
 {
 	SDL_Window				*window;
@@ -72,13 +77,12 @@ struct 						s_sdl
 	t_win					win;
 	SDL_Event				*event;
 	SDL_Surface				*wall;
-	SDL_Surface				*floor;
-	SDL_Surface				*sky;
 };
 
 struct 						s_all
 {
 	t_sdl					sdl;
+	t_game					game;
 };
 
 #endif
