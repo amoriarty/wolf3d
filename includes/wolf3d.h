@@ -10,83 +10,18 @@
 
 #ifndef WOLF3D_H
 # define WOLF3D_H
-# include "libft.h"
 # include <SDL2/SDL.h>
 # include <SDL2_image/SDL_image.h>
 # include <fcntl.h>
+# include "libft.h"
+# include "defines.h"
+# include "struct.h"
 
 /*
-** DEFINES
+** DESTROY PROTOTYPES
 */
 
-# define WIN_SIZE_X (800)
-# define WIN_SIZE_Y (600)
-# define WIN_TITLE ("Wolf3D")
-
-# define MAP_PATH ("misc/map")
-
-# define GREYSTONE_TEXTURE ("misc/texture/greystone.png")
-# define PURPLESTONE_TEXTURE ("misc/texture/purplestone.png")
-
-# define BACKGROUND_COLOR 0, 0, 0, 0
-
-# define MOVE_SPEED (0.5)
-# define ROTATE_SPEED (0.1)
-
-/*
-** DATA STRUCT
-*/
-
-typedef struct s_map		t_map;
-struct 						s_map
-{
-	int 					width;
-	int 					height;
-	int 					**map;
-};
-
-typedef struct s_sdl		t_sdl;
-struct 						s_sdl
-{
-	SDL_Window				*window;
-	SDL_Renderer			*renderer;
-	SDL_Event				*event;
-	SDL_Surface				*wall;
-	SDL_Surface				*floor;
-	SDL_Surface				*sky;
-};
-
-typedef struct s_coor		t_coor;
-struct 						s_coor
-{
-	double 					x;
-	double 					y;
-};
-
-typedef struct s_cam		t_cam;
-struct 						s_cam
-{
-	t_coor					pos;
-	t_coor					dir;
-	t_coor					plane;
-};
-
-typedef struct s_ray		t_ray;
-struct 						s_ray
-{
-	t_coor					pos;
-	t_coor					dir;
-};
-
-typedef struct s_dda		t_dda;
-struct 						s_dda
-{
-	t_coor					map;
-	t_coor					side;
-	t_coor					delta;
-	t_coor					step;
-	int 					s;
-};
+void						destroy_sdl(t_sdl *sdl);
 
 /*
 ** DRAW PROTOTYPES
@@ -106,6 +41,7 @@ void 						key_hook(SDL_Keycode sym, t_cam *cam);
 ** INIT PROTOTYPES
 */
 
+t_bool						init_sdl(t_sdl *sdl);
 void						init_cam(t_cam *camera);
 void						init_ray(t_ray *ray, t_cam *cam, int x);
 void 						init_dda(t_dda *dda_n, t_ray *ray);

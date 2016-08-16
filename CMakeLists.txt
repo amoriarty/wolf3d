@@ -25,10 +25,13 @@ SET(EXEC_FILE sources/main.c
 		sources/level/get_map.c
 		sources/level/read_file.c
 		sources/level/convert_file.c
-		sources/tools/get_pixel.c sources/draw/draw_floor.c)
+		sources/tools/get_pixel.c
+		sources/draw/draw_floor.c
+		sources/init/init_sdl.c
+		sources/destroy/destroy_sdl.c)
 
 #INCLUDES DIRECTORIES
-INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
+INCLUDE_DIRECTORIES(includes)
 INCLUDE_DIRECTORIES(libft)
 
 #LIBFT MAKEFILE CALL
