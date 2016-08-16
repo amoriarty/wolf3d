@@ -29,5 +29,5 @@ void 			raycasting(t_sdl *sdl, t_cam *cam)
 		dda_n.s = dda(&dda_n);
 		draw_wall(sdl, x, &dda_n, &ray);
 	}
-	SDL_RenderPresent(sdl->renderer);
+	SDL_RenderPresent(sdl->win.renderer);
 }

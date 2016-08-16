@@ -13,7 +13,7 @@
 void					destroy_sdl(t_sdl *sdl)
 {
 	IMG_Quit();
-	SDL_DestroyRenderer(sdl->renderer);
-	SDL_DestroyWindow(sdl->window);
+	SDL_DestroyRenderer(sdl->win.renderer);
+	SDL_DestroyWindow(sdl->win.window);
 	SDL_Quit();
 }

@@ -23,8 +23,8 @@ static void 	draw_texture(t_sdl *sdl, t_coor *t, int l, t_coor *pos)
 	SDL_GetRGBA(get_pixel(sdl->wall, (int)t->x, (int)t->y),
 				sdl->wall->format, &(pxl[0]), &(pxl[1]), &(pxl[2]), &(pxl[3]));
 	SDL_UnlockSurface(sdl->wall);
-	SDL_SetRenderDrawColor(sdl->renderer, pxl[0], pxl[1], pxl[2], pxl[3]);
-	SDL_RenderDrawPoint(sdl->renderer, (int)pos->x, (int)pos->y);
+	SDL_SetRenderDrawColor(sdl->win.renderer, pxl[0], pxl[1], pxl[2], pxl[3]);
+	SDL_RenderDrawPoint(sdl->win.renderer, (int)pos->x, (int)pos->y);
 }
 
 void 			draw_wall(t_sdl *sdl, int x, t_dda *dda_n, t_ray *ray)

@@ -42,6 +42,7 @@ void 						key_hook(SDL_Keycode sym, t_cam *cam);
 */
 
 t_bool						init_sdl(t_sdl *sdl);
+t_bool						init_window(t_win *win);
 void						init_cam(t_cam *camera);
 void						init_ray(t_ray *ray, t_cam *cam, int x);
 void 						init_dda(t_dda *dda_n, t_ray *ray);

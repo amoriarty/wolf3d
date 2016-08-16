@@ -12,21 +12,18 @@
 
 t_bool					init_sdl(t_sdl *sdl)
 {
-	if (SDL_Init(SDL_INIT_VIDEO) != ERROR)
+	if (SDL_Init(SDL_FLAG) != ERROR)
 	{
-		SDL_CreateWindowAndRenderer(
-				WIN_SIZE_X, WIN_SIZE_Y, 0, &(sdl->window), &(sdl->renderer));
-		if (sdl->window)
+		if (init_window(&(sdl->win)))
 		{
-			SDL_SetWindowTitle(sdl->window, WIN_TITLE);
-			if ((IMG_Init(IMG_INIT_PNG)&IMG_INIT_PNG) == IMG_INIT_PNG)
+			if ((IMG_Init(IMG_FLAG)&IMG_FLAG) == IMG_FLAG)
 			{
 				if ((sdl->event = (SDL_Event *)malloc(sizeof(SDL_Event))))
 					return (TRUE);
 				IMG_Quit();
 			}
-			SDL_DestroyRenderer(sdl->renderer);
-			SDL_DestroyWindow(sdl->window);
+			SDL_DestroyRenderer(sdl->win.renderer);
+			SDL_DestroyWindow(sdl->win.window);
 		}
 		SDL_Quit();
 	}
