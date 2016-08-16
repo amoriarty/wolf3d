@@ -26,6 +26,7 @@
 # define MAP_PATH ("misc/map")
 
 # define GREYSTONE_TEXTURE ("misc/texture/greystone.png")
+# define PURPLESTONE_TEXTURE ("misc/texture/purplestone.png")
 
 # define BACKGROUND_COLOR 0, 0, 0, 0
 
@@ -51,6 +52,8 @@ struct 						s_sdl
 	SDL_Renderer			*renderer;
 	SDL_Event				*event;
 	SDL_Surface				*wall;
+	SDL_Surface				*floor;
+	SDL_Surface				*sky;
 };
 
 typedef struct s_coor		t_coor;
