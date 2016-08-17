@@ -11,6 +11,7 @@
 #ifndef STRUCT_H
 # define STRUCT_H
 
+typedef enum s_aw			t_aw;
 typedef struct s_map		t_map;
 typedef struct s_coor		t_coor;
 typedef struct s_cam		t_cam;
@@ -21,7 +22,13 @@ typedef struct s_win		t_win;
 typedef struct s_sdl		t_sdl;
 typedef struct s_all		t_all;
 
-
+enum 						s_aw
+{
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
+};
 
 struct 						s_map
 {
@@ -70,6 +77,7 @@ struct 						s_game
 	t_ray					ray;
 	t_dda					dda;
 	t_coor					iter;
+	int 					arrow[4];
 };
 
 struct 						s_win

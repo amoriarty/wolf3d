@@ -27,7 +27,6 @@ void						destroy_sdl(t_sdl *sdl);
 ** DRAW PROTOTYPES
 */
 
-void						draw_background(t_sdl *sdl);
 void 						draw_wall(t_all *all);
 void 						draw_vert(SDL_Renderer *r, int x, int y1, int y2);
 void 						draw_floor(t_all *all);
@@ -38,7 +37,9 @@ void 						draw_floor(t_all *all);
 
 void 						wait_event(t_all *all);
 void 						key_hook(t_all *all, SDL_Keycode sym);
+void 						keyup_hook(t_all *all, SDL_Keycode sym);
 void 						window_event(t_all *all);
+void 						check_move(t_all *all);
 
 /*
 ** INIT PROTOTYPES

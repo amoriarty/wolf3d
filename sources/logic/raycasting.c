@@ -17,8 +17,6 @@
 void 			raycasting(t_all *all)
 {
 	all->game.iter.x = -1;
-	//TODO NO MORE BACKGROUND TO DRAW
-	draw_background(&(all->sdl));
 	while (++(all->game.iter.x) < all->sdl.win.width)
 	{
 		init_ray(all);

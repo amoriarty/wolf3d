@@ -16,5 +16,6 @@ void 					window_event(t_all *all)
 	{
 		all->sdl.win.width = all->sdl.event->window.data1;
 		all->sdl.win.height = all->sdl.event->window.data2;
+		raycasting(all);
 	}
 }
