@@ -48,7 +48,7 @@ void 			draw_wall(t_all *all)
 	all->game.dda.end = (all->game.dda.end >= WIN_SIZE_Y)
 						? WIN_SIZE_Y - 1 : all->game.dda.end;
 	all->game.dda.wall_x = (!(all->game.dda.s))
-			   ? all->game.ray.pos.x + all->game.dda.pwd * all->game.ray.dir.y
+			   ? all->game.ray.pos.y + all->game.dda.pwd * all->game.ray.dir.y
 			   : all->game.ray.pos.x + all->game.dda.pwd * all->game.ray.dir.x;
 	all->game.dda.wall_x -= floor(all->game.dda.wall_x);
 	texture.x = (int)(all->game.dda.wall_x * all->sdl.wall->w);

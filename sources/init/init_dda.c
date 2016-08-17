@@ -16,8 +16,8 @@
 
 void 			init_dda(t_dda *dda_n, t_ray *ray)
 {
-	dda_n->map.x = (int) ray->pos.x;
-	dda_n->map.y = (int) ray->pos.y;
+	dda_n->map.x = (int)ray->pos.x;
+	dda_n->map.y = (int)ray->pos.y;
 	dda_n->delta.x = sqrt(1 + (ray->dir.y * ray->dir.y)
 							  / (ray->dir.x * ray->dir.x));
 	dda_n->delta.y = sqrt(1 + (ray->dir.x * ray->dir.x)
