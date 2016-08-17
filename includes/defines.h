@@ -16,11 +16,12 @@
 # define WIN_SIZE_Y (600)
 # define GREYSTONE_TEXTURE ("misc/texture/greystone.png")
 # define PURPLESTONE_TEXTURE ("misc/texture/purplestone.png")
+# define BLUESTONE_TEXTURE ("misc/texture/bluestone.png")
 # define BACKGROUND_COLOR 0, 0, 0, 0
 
 // SDL CONFIGURATION
 # define SDL_FLAG (SDL_INIT_VIDEO)
-# define WIN_FLAG (SDL_WINDOW_RESIZABLE)
+# define WIN_FLAG (0)
 # define IMG_FLAG (IMG_INIT_PNG)
 
 // WINDOW CONFIGURATIONS

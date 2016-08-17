@@ -85,6 +85,8 @@ struct 						s_sdl
 	t_win					win;
 	SDL_Event				*event;
 	SDL_Surface				*wall;
+	SDL_Surface				*floor;
+	SDL_Surface				*sky;
 };
 
 struct 						s_all

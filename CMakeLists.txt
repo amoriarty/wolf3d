@@ -27,7 +27,7 @@ SET(EXEC_FILE sources/main.c
 		sources/level/convert_file.c
 		sources/tools/get_pixel.c
 		sources/init/init_sdl.c
-		sources/destroy/destroy_sdl.c sources/init/init_window.c sources/event/wait_event.c sources/init/init_game.c sources/event/window_event.c)
+		sources/destroy/destroy_sdl.c sources/init/init_window.c sources/event/wait_event.c sources/init/init_game.c sources/event/window_event.c sources/draw/draw_floor.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(includes)

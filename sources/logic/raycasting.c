@@ -25,6 +25,7 @@ void 			raycasting(t_all *all)
 		init_dda(&(all->game.dda), &(all->game.ray));
 		all->game.dda.s = dda(&(all->game.dda));
 		draw_wall(all);
+		draw_floor(all);
 	}
 	SDL_RenderPresent(all->sdl.win.renderer);
 }
