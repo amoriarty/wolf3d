@@ -17,6 +17,7 @@
 # define GREYSTONE_TEXTURE ("misc/texture/greystone.png")
 # define PURPLESTONE_TEXTURE ("misc/texture/purplestone.png")
 # define BLUESTONE_TEXTURE ("misc/texture/bluestone.png")
+# define MOSSY_TEXTURE ("misc/texture/mossy.png")
 # define BACKGROUND_COLOR 0, 0, 0, 0
 
 // SDL CONFIGURATION
