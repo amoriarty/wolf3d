@@ -18,7 +18,7 @@ static void 	draw_texture(t_all *all, t_coor *texture)
 {
 	Uint8 		pxl[4];
 
-	texture->y = (all->game.iter.y * 2 - WIN_SIZE_Y + all->game.dda.line_height)
+	texture->y = (all->game.iter.y * 2 - WIN_HEIGHT + all->game.dda.line_height)
 				 * (all->sdl.wall->h / 2) / all->game.dda.line_height;
 	SDL_LockSurface(all->sdl.wall);
 	SDL_GetRGBA(get_pixel(all->sdl.wall, (int)texture->x, (int)texture->y),
@@ -41,12 +41,12 @@ void 			draw_wall(t_all *all)
 					(1 - all->game.dda.step.x) / 2) / all->game.ray.dir.x
 		  : (all->game.dda.map.y - all->game.ray.pos.y +
 					(1 - all->game.dda.step.y) / 2) / all->game.ray.dir.y;
-	all->game.dda.line_height = (int) (WIN_SIZE_Y / all->game.dda.pwd);
-	all->game.dda.start = -all->game.dda.line_height / 2 + WIN_SIZE_Y / 2;
+	all->game.dda.line_height = (int) (WIN_HEIGHT / all->game.dda.pwd);
+	all->game.dda.start = -all->game.dda.line_height / 2 + WIN_HEIGHT / 2;
 	all->game.dda.start = (all->game.dda.start < 0) ? 0 : all->game.dda.start;
-	all->game.dda.end = all->game.dda.line_height / 2 + WIN_SIZE_Y / 2;
-	all->game.dda.end = (all->game.dda.end >= WIN_SIZE_Y)
-						? WIN_SIZE_Y - 1 : all->game.dda.end;
+	all->game.dda.end = all->game.dda.line_height / 2 + WIN_HEIGHT / 2;
+	all->game.dda.end = (all->game.dda.end >= WIN_HEIGHT)
+						? WIN_HEIGHT - 1 : all->game.dda.end;
 	all->game.dda.wall_x = (!(all->game.dda.s))
 			   ? all->game.ray.pos.y + all->game.dda.pwd * all->game.ray.dir.y
 			   : all->game.ray.pos.x + all->game.dda.pwd * all->game.ray.dir.x;

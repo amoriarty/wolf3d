@@ -17,8 +17,8 @@
 t_bool				init_cam(t_cam *camera)
 {
 	//TODO CONFIGURATION DEFINES FOR START pos AND DIRECTION
-	camera->pos.x = 22;
-	camera->pos.y = 12;
+	camera->pos.x = PLAYER_START_X;
+	camera->pos.y = PLAYER_START_Y;
 	camera->dir.x = -1;
 	camera->dir.y = 0;
 	camera->plane.x = 0;

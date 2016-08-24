@@ -12,13 +12,11 @@
 # define DEFINES_H
 
 //TODO DELETE THIS DEFINE
-# define WIN_SIZE_X (800)
-# define WIN_SIZE_Y (600)
 # define GREYSTONE_TEXTURE ("misc/texture/greystone.png")
 # define PURPLESTONE_TEXTURE ("misc/texture/purplestone.png")
 # define BLUESTONE_TEXTURE ("misc/texture/bluestone.png")
 # define MOSSY_TEXTURE ("misc/texture/mossy.png")
-# define BACKGROUND_COLOR 0, 0, 0, 0
+# define DAGGER_TEXTURE ("misc/texture/0-000.bmp")
 
 // SDL CONFIGURATION
 # define SDL_FLAG (SDL_INIT_VIDEO)
@@ -35,6 +33,9 @@
 # define TEXTURE_PATH ("misc/texture")
 
 // PLAYER CONFIGURATION
+# define PLAYER_START_X (2)
+# define PLAYER_START_Y (19)
+
 // CAMERA CONFIGURATION
 # define MOVE_SPEED (0.5)
 # define ROTATE_SPEED (0.1)
