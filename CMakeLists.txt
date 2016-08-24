@@ -30,9 +30,7 @@ SET(EXEC_FILE sources/main.c
 		sources/init/init_window.c
 		sources/event/wait_event.c
 		sources/init/init_game.c
-		sources/event/window_event.c
 		sources/draw/draw_floor.c
-		sources/event/keyup_hook.c
 		sources/event/check_move.c)
 
 #INCLUDES DIRECTORIES

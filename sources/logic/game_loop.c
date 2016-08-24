@@ -18,11 +18,9 @@
 
 int 			game_loop(t_all *all)
 {
-	//TODO PRELOAD TEXTURES
-	all->sdl.wall = SDL_LoadBMP(DAGGER_TEXTURE);
-	//all->sdl.wall = IMG_Load(PURPLESTONE_TEXTURE);
-	all->sdl.floor = IMG_Load(GREYSTONE_TEXTURE);
-	all->sdl.sky = IMG_Load(MOSSY_TEXTURE);
+	all->sdl.wall = SDL_LoadBMP(WALL_TEXTURE_PATH);
+	all->sdl.floor = SDL_LoadBMP(FLOOR_TEXTURE_PATH);
+	all->sdl.sky = SDL_LoadBMP(SKY_TEXTURE_PATH);
 	raycasting(all);
 	while (all->game.loop)
 		wait_event(all);

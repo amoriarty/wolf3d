@@ -17,8 +17,4 @@ void 							wait_event(t_all *all)
 		all->game.loop = FALSE;
 	if (all->sdl.event->type == SDL_KEYDOWN)
 		key_hook(all, all->sdl.event->key.keysym.sym);
-	if (all->sdl.event->type == SDL_KEYUP)
-		keyup_hook(all, all->sdl.event->key.keysym.sym);
-	if (all->sdl.event->type == SDL_WINDOWEVENT)
-		window_event(all);
 }

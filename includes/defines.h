@@ -11,13 +11,6 @@
 #ifndef DEFINES_H
 # define DEFINES_H
 
-//TODO DELETE THIS DEFINE
-# define GREYSTONE_TEXTURE ("misc/texture/greystone.png")
-# define PURPLESTONE_TEXTURE ("misc/texture/purplestone.png")
-# define BLUESTONE_TEXTURE ("misc/texture/bluestone.png")
-# define MOSSY_TEXTURE ("misc/texture/mossy.png")
-# define DAGGER_TEXTURE ("misc/texture/0-000.bmp")
-
 // SDL CONFIGURATION
 # define SDL_FLAG (SDL_INIT_VIDEO)
 # define WIN_FLAG (0)
@@ -31,9 +24,12 @@
 // PATH CONFIGURATION
 # define MAP_PATH ("misc/map")
 # define TEXTURE_PATH ("misc/texture")
+# define WALL_TEXTURE_PATH ("misc/texture/wall.bmp")
+# define FLOOR_TEXTURE_PATH ("misc/texture/floor.bmp")
+# define SKY_TEXTURE_PATH ("misc/texture/sky.bmp")
 
 // PLAYER CONFIGURATION
-# define PLAYER_START_X (2)
+# define PLAYER_START_X (39)
 # define PLAYER_START_Y (19)
 
 // CAMERA CONFIGURATION

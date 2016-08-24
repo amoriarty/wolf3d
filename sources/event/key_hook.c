@@ -17,14 +17,14 @@
 void 			key_hook(t_all *all, SDL_Keycode sym)
 {
 	if (sym == SDLK_UP || sym == SDLK_w)
-		all->game.arrow[UP] = TRUE;
+		move_up(&(all->game.cam));
 	else if (sym == SDLK_DOWN || sym == SDLK_s)
-		all->game.arrow[DOWN] = TRUE;
+		move_down(&(all->game.cam));
 	else if (sym == SDLK_LEFT || sym == SDLK_a)
-		all->game.arrow[LEFT] = TRUE;
+		rotate_left(&(all->game.cam));
 	else if (sym == SDLK_RIGHT || sym == SDLK_d)
-		all->game.arrow[RIGHT] = TRUE;
+		rotate_right(&(all->game.cam));
 	else if (sym == SDLK_ESCAPE)
 		all->game.loop = FALSE;
-	check_move(all);
+	raycasting(all);
 }
