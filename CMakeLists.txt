@@ -8,7 +8,6 @@ SET(CMAKE_C_FLAGS "-Wall -Wextra -Werror -F frameworks")
 #EXECUTABLE FILES
 SET(EXEC_FILE sources/main.c
 		sources/level/level.c
-		sources/draw/draw_vertical.c
 		sources/init/init_cam.c
 		sources/draw/draw_wall.c
 		sources/logic/dda.c
