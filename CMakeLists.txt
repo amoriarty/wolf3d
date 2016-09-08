@@ -3,7 +3,7 @@ PROJECT(wolf3d)
 
 #COMPILERS CONFIGURATION
 SET(CMAKE_C_COMPILER "/usr/bin/clang")
-SET(CMAKE_C_FLAGS "-Wall -Wextra -Werror -F /Library/Frameworks")
+SET(CMAKE_C_FLAGS "-Wall -Wextra -Werror -F frameworks")
 
 #EXECUTABLE FILES
 SET(EXEC_FILE sources/main.c

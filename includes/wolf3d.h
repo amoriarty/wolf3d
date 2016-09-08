@@ -11,7 +11,7 @@
 #ifndef WOLF3D_H
 # define WOLF3D_H
 # include <SDL2/SDL.h>
-# include <SDL2_image/SDL_image.h>
+//# include <SDL2_image/SDL_image.h>
 # include <fcntl.h>
 # include "libft.h"
 # include "defines.h"

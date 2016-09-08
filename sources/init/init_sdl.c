@@ -16,14 +16,14 @@ t_bool					init_sdl(t_sdl *sdl)
 	{
 		if (init_window(&(sdl->win)))
 		{
-			SDL_SetRelativeMouseMode(SDL_TRUE);
-			SDL_SetWindowGrab(sdl->win.window, SDL_TRUE);
-			if ((IMG_Init(IMG_FLAG)&IMG_FLAG) == IMG_FLAG)
-			{
+			//SDL_SetRelativeMouseMode(SDL_TRUE);
+			//SDL_SetWindowGrab(sdl->win.window, SDL_TRUE);
+			//if ((IMG_Init(IMG_FLAG)&IMG_FLAG) == IMG_FLAG)
+			//{
 				if ((sdl->event = (SDL_Event *)malloc(sizeof(SDL_Event))))
 					return (TRUE);
-				IMG_Quit();
-			}
+			//	IMG_Quit();
+		//	}
 			SDL_DestroyRenderer(sdl->win.renderer);
 			SDL_DestroyWindow(sdl->win.window);
 		}
