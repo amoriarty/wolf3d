@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/13 12:17:39 by alegent           #+#    #+#              #
-#    Updated: 2016/09/08 13:01:46 by alegent          ###   ########.fr        #
+#    Updated: 2016/09/08 13:17:00 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ SRC_PATH= sources/
 SRC_NAME= main.c \
 		  destroy/destroy_sdl.c \
 		  draw/draw_floor.c \
-		  draw/draw_vertical.c \
 		  draw/draw_wall.c \
 		  event/check_move.c \
 		  event/key_hook.c \

@@ -1,12 +1,14 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     dda.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 09/08/2016 15:39 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   dda.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:19:47 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:50:41 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "wolf3d.h"
 
@@ -14,10 +16,10 @@
 ** AS "Digital Differential Analysis", Google it.
 */
 
-int 			dda(t_dda *dda)
+int				dda(t_dda *dda)
 {
-	int 		hit;
-	int 		side;
+	int			hit;
+	int			side;
 
 	hit = FALSE;
 	side = 0;

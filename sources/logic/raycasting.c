@@ -1,12 +1,14 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     raycasting.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 09/08/2016 16:00 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   raycasting.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:20:10 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:50:12 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "wolf3d.h"
 
@@ -14,7 +16,7 @@
 ** MY RAYCASTING ALGORITHM, MINIMIZE TO FUNCTIONS CALLED
 */
 
-void 			raycasting(t_all *all)
+void					raycasting(t_all *all)
 {
 	all->game.iter.x = -1;
 	while (++(all->game.iter.x) < all->sdl.win.width)

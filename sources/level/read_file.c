@@ -1,17 +1,19 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     read_file.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 11/08/2016 13:14 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_file.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:19:34 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:47:27 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "wolf3d.h"
 #include "level.h"
 
-static t_tmp 			*push_new(t_tmp *first, char *line)
+static t_tmp			*push_new(t_tmp *first, char *line)
 {
 	t_tmp				*new;
 	t_tmp				*tmp;
@@ -36,8 +38,8 @@ static t_tmp 			*push_new(t_tmp *first, char *line)
 
 t_tmp					*read_file(int *lnb)
 {
-	int 				fd;
-	char 				*line;
+	int					fd;
+	char				*line;
 	t_tmp				*first;
 
 	*lnb = 0;

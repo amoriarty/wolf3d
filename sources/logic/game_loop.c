@@ -1,12 +1,14 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     game_loop.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 09/08/2016 17:17 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   game_loop.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:19:51 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:49:40 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "wolf3d.h"
 
@@ -14,9 +16,7 @@
 ** GAME LOOP
 */
 
-
-
-int 			game_loop(t_all *all)
+int					game_loop(t_all *all)
 {
 	all->sdl.wall = SDL_LoadBMP(WALL_TEXTURE_PATH);
 	all->sdl.floor = SDL_LoadBMP(FLOOR_TEXTURE_PATH);

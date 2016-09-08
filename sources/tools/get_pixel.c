@@ -1,12 +1,14 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     get_pixel.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 10/08/2016 10:26 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_pixel.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:20:36 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:53:34 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "wolf3d.h"
 
@@ -22,10 +24,10 @@ Uint32				get_pixel(SDL_Surface *surface, int x, int y)
 		return (*(Uint16 *)p);
 	else if (surface->format->BytesPerPixel == 3)
 	{
-		if(SDL_BYTEORDER == SDL_BIG_ENDIAN)
-			return p[0] << 16 | p[1] << 8 | p[2];
+		if (SDL_BYTEORDER == SDL_BIG_ENDIAN)
+			return (p[0] << 16 | p[1] << 8 | p[2]);
 		else
-			return p[0] | p[1] << 8 | p[2] << 16;
+			return (p[0] | p[1] << 8 | p[2] << 16);
 	}
 	else if (surface->format->BytesPerPixel == 4)
 		return (*(Uint32 *)p);

@@ -1,12 +1,14 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     rotate_left.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 09/08/2016 16:57 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate_left.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:20:17 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:51:51 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "wolf3d.h"
 
@@ -15,10 +17,10 @@
 ** ROTATE SPEED CONFIGURABLE IN WOLF3D.H
 */
 
-void 					rotate_left(t_cam *cam)
+void					rotate_left(t_cam *cam)
 {
-	double 				old_dir_x;
-	double 				old_plane_x;
+	double				old_dir_x;
+	double				old_plane_x;
 
 	old_dir_x = cam->dir.x;
 	old_plane_x = cam->plane.x;

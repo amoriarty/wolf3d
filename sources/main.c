@@ -1,39 +1,18 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     main.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 04/08/2016 15:16 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:15:47 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:31:43 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "wolf3d.h"
 
-//TODO MAKE IT PLAYABLE
-	//TODO GRAPHIC
-		//TODO ALL IN A SURFACE ?
-	//TODO SOUNDS
-	//TODO A LOT OF MAP FILE / MAP PARSING ?
-	//TODO WOLF3D STATE MENU
-	//TODO MOUSE HOOK
-	//TODO RESIZE / FULLSCREEN ?
-	//TODO GAMEPAD ?
-	//TODO TRIGGERING
-		//TODO DOORS
-		//TODO ENNEMY
-	//TODO PLAYER
-		//TODO LIFE
-		//TODO AMMO
-//TODO MAKE IT CLEAR !
-
-/*
-** SETTING SDL STRUCTURE
-** (OPEN WINDOW, SETTING TITLE, SETTING RENDERER,
-** ALLOCATE SDL_EVENTS AND FINALLY GIVE THE STRUCTURE TO GAME FUNCTION)
-*/
-
-int 				main(void)
+int					main(void)
 {
 	t_all			all;
 

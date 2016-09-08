@@ -1,12 +1,14 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     level.h
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 11/08/2016 12:56 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   level.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:15:17 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:27:38 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef LEVEL_H
 # define LEVEL_H
@@ -18,8 +20,8 @@
 typedef struct s_tmp			t_tmp;
 struct							s_tmp
 {
-	char 						*line;
-	int 						size;
+	char						*line;
+	int							size;
 	t_tmp						*next;
 };
 
@@ -28,6 +30,6 @@ struct							s_tmp
 */
 
 t_tmp							*read_file(int *lnb);
-int 							**convert_file(t_tmp *tmp, int lnb);
+int								**convert_file(t_tmp *tmp, int lnb);
 
 #endif

@@ -1,12 +1,14 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     key_hook.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 09/08/2016 16:48 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key_hook.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:17:42 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:41:42 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "wolf3d.h"
 
@@ -14,7 +16,7 @@
 ** KEY_HOOK WILL CALL THE CORRECT FUNCTION ACCORDING TO THE KEY PRESSED
 */
 
-void 			key_hook(t_all *all, SDL_Keycode sym)
+void				key_hook(t_all *all, SDL_Keycode sym)
 {
 	if (sym == SDLK_UP || sym == SDLK_w)
 		move_up(&(all->game.cam));

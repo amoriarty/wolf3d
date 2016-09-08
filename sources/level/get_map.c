@@ -1,17 +1,19 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     get_map.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 11/08/2016 12:51 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_map.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:19:22 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:46:37 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "wolf3d.h"
 #include "level.h"
 
-static void 			free_tmp(t_tmp *head)
+static void				free_tmp(t_tmp *head)
 {
 	if (head->next)
 		free_tmp(head->next);
@@ -19,7 +21,7 @@ static void 			free_tmp(t_tmp *head)
 	free(head);
 }
 
-t_map 					*get_map(void)
+t_map					*get_map(void)
 {
 	t_map				*map;
 	t_tmp				*list;

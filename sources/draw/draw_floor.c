@@ -1,18 +1,20 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     draw_floor.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 17/08/2016 12:47 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_floor.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:16:17 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:41:14 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "wolf3d.h"
 
-static void 	draw_sky_texture(t_all *all, t_coor *texture)
+static void				draw_sky_texture(t_all *all, t_coor *texture)
 {
-	Uint8 		pxl[4];
+	Uint8				pxl[4];
 
 	SDL_LockSurface(all->sdl.sky);
 	SDL_GetRGBA(get_pixel(all->sdl.sky, (int)texture->x, (int)texture->y),
@@ -20,32 +22,30 @@ static void 	draw_sky_texture(t_all *all, t_coor *texture)
 				&(pxl[0]), &(pxl[1]), &(pxl[2]), &(pxl[3]));
 	SDL_UnlockSurface(all->sdl.sky);
 	SDL_SetRenderDrawColor(all->sdl.win.renderer,
-						   pxl[0], pxl[1], pxl[2], pxl[3]);
+			pxl[0], pxl[1], pxl[2], pxl[3]);
 	SDL_RenderDrawPoint(all->sdl.win.renderer,
-						(int)all->game.iter.x,
-						all->sdl.win.height - (int)all->game.iter.y);
+			(int)all->game.iter.x,
+			all->sdl.win.height - (int)all->game.iter.y);
 }
 
-static void 	draw_floor_texture(t_all *all, t_coor *texture)
+static void				draw_floor_texture(t_all *all, t_coor *texture)
 {
-	Uint8 		pxl[4];
+	Uint8				pxl[4];
 
 	SDL_LockSurface(all->sdl.floor);
 	SDL_GetRGBA(get_pixel(all->sdl.floor, (int)texture->x, (int)texture->y),
-				all->sdl.floor->format,
-				&(pxl[0]), &(pxl[1]), &(pxl[2]), &(pxl[3]));
+			all->sdl.floor->format, &(pxl[0]), &(pxl[1]), &(pxl[2]), &(pxl[3]));
 	SDL_UnlockSurface(all->sdl.floor);
 	SDL_SetRenderDrawColor(all->sdl.win.renderer,
-						   pxl[0], pxl[1], pxl[2], pxl[3]);
+			pxl[0], pxl[1], pxl[2], pxl[3]);
 	SDL_RenderDrawPoint(all->sdl.win.renderer,
-						(int)all->game.iter.x,
-						(int)all->game.iter.y);
+			(int)all->game.iter.x, (int)all->game.iter.y);
 }
 
-void 					draw_floor(t_all *all)
+void					draw_floor(t_all *all)
 {
 	t_coor				floor;
-	double 				dist_wall;
+	double				dist_wall;
 	double				dist_player;
 	double				current_dist;
 	double				weight;

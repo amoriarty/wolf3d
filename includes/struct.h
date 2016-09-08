@@ -1,17 +1,19 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     struct.h
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 16/08/2016 11:47 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   struct.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 13:15:24 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 13:29:40 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
 
-typedef enum s_aw			t_aw;
+typedef enum e_aw			t_aw;
 typedef struct s_map		t_map;
 typedef struct s_coor		t_coor;
 typedef struct s_cam		t_cam;
@@ -22,7 +24,7 @@ typedef struct s_win		t_win;
 typedef struct s_sdl		t_sdl;
 typedef struct s_all		t_all;
 
-enum 						s_aw
+enum						e_aw
 {
 	UP,
 	DOWN,
@@ -30,65 +32,65 @@ enum 						s_aw
 	RIGHT
 };
 
-struct 						s_map
+struct						s_map
 {
-	int 					width;
-	int 					height;
-	int 					**map;
+	int						width;
+	int						height;
+	int						**map;
 };
 
-struct 						s_coor
+struct						s_coor
 {
-	double 					x;
-	double 					y;
+	double					x;
+	double					y;
 };
 
-struct 						s_cam
+struct						s_cam
 {
 	t_coor					pos;
 	t_coor					dir;
 	t_coor					plane;
 };
 
-struct 						s_ray
+struct						s_ray
 {
 	t_coor					pos;
 	t_coor					dir;
 };
 
-struct 						s_dda
+struct						s_dda
 {
 	t_coor					map;
 	t_coor					side;
 	t_coor					delta;
 	t_coor					step;
-	int 					s;
-	int 					line_height;
+	int						s;
+	int						line_height;
 	double					pwd;
-	double 					wall_x;
-	int 					start;
-	int 					end;
+	double					wall_x;
+	int						start;
+	int						end;
 };
 
-struct 						s_game
+struct						s_game
 {
 	t_bool					loop;
 	t_cam					cam;
 	t_ray					ray;
 	t_dda					dda;
 	t_coor					iter;
-	int 					arrow[4];
+	int						arrow[4];
 };
 
-struct 						s_win
+struct						s_win
 {
 	SDL_Window				*window;
 	SDL_Renderer			*renderer;
-	int 					width;
-	int 					height;
+	int						width;
+	int						height;
 };
 
-struct 						s_sdl
+struct						s_sdl
 {
 	t_win					win;
 	SDL_Event				*event;
@@ -97,7 +99,7 @@ struct 						s_sdl
 	SDL_Surface				*sky;
 };
 
-struct 						s_all
+struct						s_all
 {
 	t_sdl					sdl;
 	t_game					game;
