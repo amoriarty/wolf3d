@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/13 12:17:39 by alegent           #+#    #+#              #
-#    Updated: 2016/09/08 13:17:00 by alegent          ###   ########.fr        #
+#    Updated: 2016/09/19 16:35:35 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,7 @@ OBJ_PATH= obj/
 OBJ_NAME= $(SRC_NAME:.c=.o)
 OBJ= $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 
-GCC= clang -Wall -Wextra -Werror
-GOPT = 
+CC= clang -Wall -Wextra -Werror
 
 INC_LIB= libft/
 INC_PATH= includes/
@@ -54,19 +53,18 @@ INC= -I $(INC_LIB) -I $(INC_PATH)
 
 LIB= libft/libft.a
 FRAMEWORK= -framework SDL2
-FRAMEWORK_PATH = -F frameworks
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@make -C $(INC_LIB)
-	@$(GCC) $(GOPT) $(LIB) $(INC) $(FRAMEWORK_PATH) $(FRAMEWORK) -o $(NAME) $(OBJ)
+	@$(CC) $(LIB) $(INC) $(FRAMEWORK) -o $(NAME) $(OBJ)
 	@echo "Your program is ready to go !"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(OBJ_PATH)/{destroy,draw,event,init,level,logic/{move,rotate},tools}
-	$(GCC) $(GOPT) $(INC) -o $@ -c $<
-
+	$(CC) $(INC) -o $@ -c $<
+ 
 clean:
 	@make -C $(INC_LIB) clean
 	@rm -rf $(OBJ)
